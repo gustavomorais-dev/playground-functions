@@ -27,7 +27,7 @@ const highestCount = (numbers) => {
 
     let repetitions = 0;
     for (let index2 = 0; index2 < numbers.length; index2 += 1) {
-        numbers[index2] === numbers[index] && (repetitions += 1);
+      numbers[index2] === numbers[index] && (repetitions += 1);
     }
 
     if (repetitions > winner[1] && higher === numbers[index]) {
@@ -47,7 +47,7 @@ const calcRectangleArea = (base, height) => (base * height);
 const calcAllAreas = (base, height, form) => {
   if (form === "triângulo") {
     return `O valor da área do ${form} é de: ${calcTriangleArea(base, height)}`;
-  } else if (form === "retângulo"){
+  } else if (form === "retângulo") {
     return `O valor da área do ${form} é de: ${calcRectangleArea(base, height)}`;
   } else {
     return 'Não foi possível fazer o cálculo, insira uma forma geométrica válida';
@@ -87,6 +87,50 @@ const fizzBuzz = (numbers) => {
 }
 
 // Desafio 9 - Crie a função encode e a função decode
+
+const dictionary = {
+  'a': '1',
+  'e': '2',
+  'i': '3',
+  'o': '4',
+  'u': '5',
+}
+
+const encode = (string) => {
+  let newString = '';
+  for (character of string) {
+
+    let found = false;
+
+    for (key in dictionary) {
+      if (character == key) { 
+        newString += dictionary[key];
+        found = true;
+      }
+    }
+
+    !found && (newString += character);
+  }
+  return newString;
+}
+
+const decode = (string) => {
+  let newString = '';
+  for (character of string) {
+
+    let found = false;
+
+    for (key in dictionary) {
+      if (character == dictionary[key]) { 
+        newString += key;
+        found = true;
+      }
+    }
+    
+    !found && (newString += character);
+  }
+  return newString;
+}
 
 // Desafio 10 - Crie a função techList
 
