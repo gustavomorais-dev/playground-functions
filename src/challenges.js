@@ -16,6 +16,28 @@ const footballPoints = (wins, ties) => (wins * 3 + ties);
 
 // Desafio 5 - Crie a função highestCount
 
+const highestCount = (numbers) => {
+  let winner = [0, Number.NEGATIVE_INFINITY]; // [number, repetitions]
+  for (let index = 0; index < numbers.length; index += 1) {
+
+    let higher = Number.NEGATIVE_INFINITY;
+    for (let index2 = 0; index2 < numbers.length; index2 += 1) {
+      numbers[index2] > higher && (higher = numbers[index2]);
+    }
+
+    let repetitions = 0;
+    for (let index2 = 0; index2 < numbers.length; index2 += 1) {
+        numbers[index2] === numbers[index] && (repetitions += 1);
+    }
+
+    if (repetitions > winner[1] && higher === numbers[index]) {
+      winner = [numbers[index], repetitions];
+    }
+
+  }
+  return winner[1];
+}
+
 // Desafio 6 - Crie as funções calcTriangleArea, calcRectangleArea e calcAllAreas
 
 // Desafio 7 - Crie a função catAndMouse
