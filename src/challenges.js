@@ -59,7 +59,6 @@ const calcAllAreas = (base, height, form) => {
 const catAndMouse = (mouse, cat1, cat2) => {
   let cat1Distance = Math.abs(cat1 - mouse);
   let cat2Distance = Math.abs(cat2 - mouse);
-  //console.log(mouse, cat1, cat2);
   if (cat1Distance < cat2Distance) {
     return 'cat1';
   } else if (cat2Distance < cat1Distance) {
