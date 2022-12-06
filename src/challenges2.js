@@ -39,7 +39,7 @@ const triangleCheck = (lineA, lineB, lineC) => {
   triangle = false;
   // Condição 1: a medida de um dos lados é menor que a soma das medidas dos outros dois lados e maior que o valor absoluto (módulo) da diferença entre os outros dois lados. //
   (lineA < lineB + lineC && lineA > Math.abs(lineB - lineC)) ? triangle = true : (lineB < lineA + lineC && lineB > Math.abs(lineA - lineC)) ? triangle = true :
-  (lineC < lineB + lineA && lineC > Math.abs(lineB - lineA)) ? triangle = true : triangle = false;
+    (lineC < lineB + lineA && lineC > Math.abs(lineB - lineA)) ? triangle = true : triangle = false;
   // Condição 2: a medida de qualquer um dos lados é menor que a soma das medidas dos outros dois lados. 
   (lineA < lineB + lineC && lineC < lineB + lineA && lineB < lineA + lineC) ? triangle = true : triangle = false;
   // Return
@@ -47,6 +47,20 @@ const triangleCheck = (lineA, lineB, lineC) => {
 }
 
 // Desafio 13 - Crie a função hydrate
+
+const hydrate = (string) => {
+  let array = (string.match(/\d+/g));
+  let waterCups = 0;
+  for (let index = 0; index < array.length; index += 1) {
+    waterCups += parseInt(array[index]);
+  }
+
+  if (waterCups === 1) { 
+    return `${waterCups} copo de água`
+  } else {
+    return `${waterCups} copos de água`
+  }
+}
 
 /* eslint no-undef: 0 */
 
