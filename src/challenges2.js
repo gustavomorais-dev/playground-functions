@@ -35,6 +35,17 @@ elemento aparece. */
 
 // Desafio 12 -  Crie a função triangleCheck
 
+const triangleCheck = (lineA, lineB, lineC) => {
+  triangle = false;
+  // Condição 1: a medida de um dos lados é menor que a soma das medidas dos outros dois lados e maior que o valor absoluto (módulo) da diferença entre os outros dois lados. //
+  (lineA < lineB + lineC && lineA > Math.abs(lineB - lineC)) ? triangle = true : (lineB < lineA + lineC && lineB > Math.abs(lineA - lineC)) ? triangle = true :
+  (lineC < lineB + lineA && lineC > Math.abs(lineB - lineA)) ? triangle = true : triangle = false;
+  // Condição 2: a medida de qualquer um dos lados é menor que a soma das medidas dos outros dois lados. 
+  (lineA < lineB + lineC && lineC < lineB + lineA && lineB < lineA + lineC) ? triangle = true : triangle = false;
+  // Return
+  return triangle;
+}
+
 // Desafio 13 - Crie a função hydrate
 
 /* eslint no-undef: 0 */
