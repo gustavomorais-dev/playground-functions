@@ -1,3 +1,3 @@
-# :construction: README em construção ! :construction:
+# Projeto Playground Functions
 
 Esse projeto é uma coleção de desafios de javascript. Vários exercícios de lógica.
